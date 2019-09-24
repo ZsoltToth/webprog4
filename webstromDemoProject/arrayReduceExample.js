@@ -10,3 +10,9 @@ console.log(
         return total + current.score
     },0)
 );
+
+console.log(
+    students.reduce((total,current)=>{
+        return total >= current.score ? total : current.score;
+    },0)
+);
