@@ -22,3 +22,5 @@ cnt1.increase();
 cnt1.increase();
 cnt1.increase();
 console.log(cnt1.value());
+
+
