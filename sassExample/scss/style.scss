@@ -8,3 +8,28 @@ h1 {
   color: $secondary-color;
 };
 };
+
+#banner {
+  width : 1024px;
+  height: 200px;
+  background: $primary-color;
+}
+
+#menuBar ul {
+  display: block;
+  list-style-type: none;
+
+  li {
+    width: 200px;
+    display: inline;
+  }
+}
+
+#content{
+  background: $secondary-color;
+}
+
+#footer {
+  width : 1024px;
+  background: $primary-color;
+}
