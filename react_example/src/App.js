@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ShoppingCart from './ShoppingCart'
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          I do React Programming.
+          <ShoppingCart name="zsolt"/>
         </p>
         <a
           className="App-link"
