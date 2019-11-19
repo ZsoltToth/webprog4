@@ -4,12 +4,17 @@ import './App.css';
 import ShoppingCart from './ShoppingCart'
 
 function App() {
+    var products = [
+        {name : 'Apple', price : 5},
+        {name : 'Banana', price : 3},
+        {name : 'Cherry', price : 12}
+    ];
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          <ShoppingCart/>
+          <ShoppingCart products={products}/>
         </p>
         <a
           className="App-link"

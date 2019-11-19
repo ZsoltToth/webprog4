@@ -7,6 +7,7 @@ class ShoppingCart extends React.Component{
     }
 
     render(){
+        console.log(this.props.products);
         return (
             <table>
                 <thead>
@@ -16,14 +17,21 @@ class ShoppingCart extends React.Component{
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>????</td>
-                    <td>?????</td>
-                </tr>
+                {this.props.products.map((product)=>{
+                    return(<tr>
+                        <td>{product.name}</td>
+                        <td>{product.price}</td>
+                    </tr>)
+                })}
                 </tbody>
                 <tfoot>
                 <td>Total Price</td>
-                <td>????</td>
+                <td>
+                    {this.props.products.reduce(
+                    (total, current)=>{return total + current.price},
+                        0
+                    )}
+                    </td>
                 </tfoot>
             </table>
             );
