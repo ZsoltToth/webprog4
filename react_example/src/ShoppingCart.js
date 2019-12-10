@@ -1,9 +1,24 @@
 import React from 'react';
+import ProductStore from "./ProductStore";
 
 class ShoppingCart extends React.Component{
 
     constructor(props){
         super(props);
+        this._onChange = this._onChange.bind(this);
+        this.state = {products : [{name : 'Apple', price : 5}]}
+    }
+
+    _onChange(){
+        this.setState({products : ProductStore._products});
+    }
+
+    componentDidMount(){
+        ProductStore.addChangeListener(this._onChange)
+    }
+
+    componentWillUnmount(){
+        ProductStore.removeChangeListener(this._onChange)
     }
 
     render(){
@@ -17,7 +32,7 @@ class ShoppingCart extends React.Component{
                 </tr>
                 </thead>
                 <tbody>
-                {this.props.products.map((product)=>{
+                {this.state.products.map((product)=>{
                     return(<tr>
                         <td>{product.name}</td>
                         <td>{product.price}</td>
@@ -27,7 +42,7 @@ class ShoppingCart extends React.Component{
                 <tfoot>
                 <td>Total Price</td>
                 <td>
-                    {this.props.products.reduce(
+                    {this.state.products.reduce(
                     (total, current)=>{return total + current.price},
                         0
                     )}

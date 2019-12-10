@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ShoppingCart from './ShoppingCart'
+import ProductStore from "./ProductStore";
+import ShoppingCartActions from "./ShoppingCartActions";
 
 function App() {
     var products = [
@@ -16,6 +18,8 @@ function App() {
         <p>
           <ShoppingCart products={products}/>
         </p>
+          <button onClick={()=>{ShoppingCartActions.emptyShoppingCart()}}>Empty</button> <br/>
+          <button onClick={()=>{ShoppingCartActions.loadDummyShoppingCart()}}>Dummy</button>
         <a
           className="App-link"
           href="https://reactjs.org"
