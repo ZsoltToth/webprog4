@@ -22,6 +22,13 @@ class ShoppingCartActions{
             payload : productName
         })
     }
+
+    insertProduct(product){
+        ProductDispatcher.handleViewAction({
+            actionType : 'INSERT_PRODUCT',
+            payload : product
+        })
+    }
 }
 
 export default new ShoppingCartActions();

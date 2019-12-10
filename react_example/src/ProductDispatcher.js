@@ -44,6 +44,14 @@ dispatcher.register((data)=>{
     ProductStore.emitChange();
 });
 
+dispatcher.register((data)=>{
+    if(data.action.actionType !== 'INSERT_PRODUCT'){
+        return;
+    }
+    ProductStore._products.push(data.action.payload);
+    ProductStore.emitChange();
+});
+
 
 export default dispatcher;
 

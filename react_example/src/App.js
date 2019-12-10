@@ -4,6 +4,7 @@ import './App.css';
 import ShoppingCart from './ShoppingCart'
 import ProductStore from "./ProductStore";
 import ShoppingCartActions from "./ShoppingCartActions";
+import ProductForm from "./ProductForm";
 
 function App() {
     var products = [
@@ -16,7 +17,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          <ShoppingCart products={products}/>
+          <ShoppingCart/>
         </p>
           <button onClick={()=>{ShoppingCartActions.emptyShoppingCart()}}>Empty</button> <br/>
           <button onClick={()=>{ShoppingCartActions.loadDummyShoppingCart()}}>Dummy</button>
@@ -28,6 +29,9 @@ function App() {
         >
           Learn React
         </a>
+          <ShoppingCart/>
+          <br/>
+          <ProductForm/>
       </header>
     </div>
   );
