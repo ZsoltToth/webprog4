@@ -33,6 +33,18 @@ dispatcher.register((data)=>{
     ProductStore.emitChange();
 });
 
+dispatcher.register((data)=>{
+    if(data.action.actionType !== 'DELETE_PRODUCT_BY_NAME'){
+        return;
+    }
+    ProductStore._products = ProductStore._products.filter(
+        (product)=>{
+            return product.name !== data.action.payload
+        });
+    ProductStore.emitChange();
+});
+
+
 export default dispatcher;
 
 

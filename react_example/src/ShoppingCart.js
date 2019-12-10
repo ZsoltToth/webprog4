@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductStore from "./ProductStore";
+import ShoppingCartActions from "./ShoppingCartActions";
 
 class ShoppingCart extends React.Component{
 
@@ -34,7 +35,9 @@ class ShoppingCart extends React.Component{
                 <tbody>
                 {this.state.products.map((product)=>{
                     return(<tr>
-                        <td>{product.name}</td>
+                        <td>{product.name} <button onClick={()=>{
+                        ShoppingCartActions.deleteProductByName(product.name)}
+                        }>Delete</button></td>
                         <td>{product.price}</td>
                     </tr>)
                 })}

@@ -15,6 +15,13 @@ class ShoppingCartActions{
             payload : null
         })
     }
+
+    deleteProductByName(productName){
+        ProductDispatcher.handleViewAction({
+            actionType : 'DELETE_PRODUCT_BY_NAME',
+            payload : productName
+        })
+    }
 }
 
 export default new ShoppingCartActions();
